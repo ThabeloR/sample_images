@@ -13,7 +13,7 @@
 
 main:
 	la $s6, buffer
-	li $s0 , 12287 # set a counter that will cont the number of lines that have pixel values
+	li $s0 , 12288 # set a counter that will cont the number of lines that have pixel values
 	li $s2, 0x30  # 48 the 0 
 	move $s3, $zero ## contains the int val
 	move $s5, $zero ## contains the int val

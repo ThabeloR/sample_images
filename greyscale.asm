@@ -11,7 +11,7 @@
 
 main:
 	la $s6, buffer
-	li $s0 , 12287 # set a counter that will cont the number of lines that have pixel values
+	li $s0 , 12288 # set a counter that will cont the number of lines that have pixel values
 	li $s2, 0x30  # 48 the 0 
 	move $s3, $zero ## contains the int val
 	move $s5, $zero ## contains the int val
@@ -19,6 +19,7 @@ main:
 	li $t5, 0
 	li $t6, 2 # get the three values to ave
 	li $t7 , 0 # store avrage of second image
+	li $t8, 0
 
 	# open to a file
 	li $v0, 13 # open_file
@@ -113,8 +114,8 @@ pad:
 	addi $a3, $a3, 1
 	j greyscale
 set:
-	bge $t8, $t6, setnow
 	add $t7, $t7, $s3
+	bge $t8, $t6, setnow
 	addi $t8, $t8, 1 
 	move $s3, $zero
 	j greyscale 
