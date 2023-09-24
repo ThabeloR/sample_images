@@ -54,9 +54,6 @@ computeheader:
 	beq $t1, $a1, brightness # skip the header
 	j computeheader
 
-	
-
-	
 
     # run brightness program
 brightness: 
@@ -181,7 +178,7 @@ Done:
 	move $a0, $s1
 	syscall 
 	
-
+	
 exit:
 	li $v0, 10
 	syscall
