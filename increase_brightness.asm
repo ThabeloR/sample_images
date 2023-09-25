@@ -2,10 +2,11 @@
     data1: .asciiz "Average pixel value of the original image:\n"
     data2: .asciiz "\nAverage pixel value of new image:\n"
     buffer: .space 4  # Allocate space for a string buffer (adjust size as needed)
-    file:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/jet_64_in_ascii_crlf.ppm"
+    file:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/tree_64_in_ascii_crlf.ppm"
     newfile:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/bright_crlf.ppm"
     filesize:    .space  61460
     buffer2:	.space  61460
+    zero: .double 0.0  # Integer to convert
     
 
 .text
@@ -132,17 +133,20 @@ Done:
 	li $v0, 16 # close file
 	move $a0, $s0 # file descriptor to close
 	syscall
+	ldc1 $f6, zero
 	li $t8, 3133440
 	
-	mtc1.d $t6, $f1
-	cvt.s.w $f1,$f1
-	
 	mtc1.d $t8, $f2
-	cvt.s.w $f2,$f2
-	div.s $f4, $f1, $f2
+	cvt.d.w $f2,$f2
+	
+	mtc1.d $t6, $f0
+	cvt.d.w $f0,$f0
+	
 
-	li $v0, 2
-	mov.s $f12, $f4
+	div.d $f4, $f0, $f2
+
+	li $v0, 3
+	add.d $f12, $f4, $f6
 	syscall
 	
 	# print out the program output
@@ -150,15 +154,13 @@ Done:
    	la $a0, data2
 	syscall
 	
-	mtc1.d $t7, $f1
-	cvt.s.w $f1,$f1
-	
-	mtc1.d $t8, $f2
-	cvt.s.w $f2,$f2
-	div.s $f4, $f1, $f2
+	mtc1.d $t7, $f0
+	cvt.d.w $f0,$f0
 
-	li $v0, 2
-	mov.s $f12, $f4
+	div.d $f4, $f0, $f2
+
+	li $v0, 3
+	add.d $f12, $f4, $f6
 	syscall
 	
 	# open to a file
