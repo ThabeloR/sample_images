@@ -1,3 +1,6 @@
+# program that brigtheness image pixels
+# by Thabelo Tshikalange
+
 .data
     data1: .asciiz "Average pixel value of the original image:\n"
     data2: .asciiz "\nAverage pixel value of new image:\n"
@@ -21,7 +24,7 @@ main:
 	li $s4, 10 # store 10 in s4
 	li $t5, 0 # store 0 in t5
 	li $t6, 0 # store the average of the main image
-	li $t7 , 0 # store average of second image
+	li $t7 ,0 # store average of second image
 	
 	
    	# print out the program output 1 that is the data1 string
