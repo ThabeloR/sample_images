@@ -21,6 +21,6 @@ You should have an input PPM image file that you want to adjust the brightness o
 
 **Save the Modified Image:** If the program runs successfully, it will save the modified image to a new file specified by the newfile variable in the assembly code. You can then view this modified image using an image viewer. The dirctory of the saved file must specified. You can use the already provided bright_crlf.ppm for the increase_brightness.asm program and the greyscale_crlf.ppm for the greyscale.asm program insure that the dirctory to the file is added correctly.
 
-Exit the Simulator: After you have finished running and testing the program, you can exit the MARS simulator.
+**Exit the Simulator:** After you have finished running and testing the program, you can exit the MARS simulator.
 
 ### This is how you run either of the two programs 
