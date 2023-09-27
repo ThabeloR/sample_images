@@ -3,8 +3,8 @@
 
 .data
     buffer: .space 4  # Allocate space for a string buffer (adjust size as needed)
-    file:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/house_64_in_ascii_crlf.ppm"
-    newfile:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/greyscale_crlf.ppm"
+    file:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/house_64_in_ascii_crlf.ppm" # must be changed to were your image is
+    newfile:    .asciiz "C:/Users/tshik/OneDrive - University of Cape Town/Documents/UCT/4th Year/CSC2002S/ASM/sample_images/greyscale_crlf.ppm" # must be changed to were the greyscale_crlf file is
     filesize:    .space  61460 # The space given to the file that will be read 
     buffer2:	.space  61460 # The space given for the buffer that will have the new file data to be written
     
