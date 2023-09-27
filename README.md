@@ -1,4 +1,4 @@
-# Running the Brightness Adjustment Program
+# Running the Brightness Adjustment and greyscale Program
 ## Prerequisites
 Before running the program, make sure you have the following:
 
